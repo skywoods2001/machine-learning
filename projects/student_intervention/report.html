@@ -12298,7 +12298,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[140]:</div>
+<div class="prompt input_prompt">In&nbsp;[147]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
@@ -12323,10 +12323,81 @@ Testing set has 95 samples.
 <span class="n">y_train_300</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">300</span><span class="p">]</span>
 
 <span class="c1"># TODO: Execute the &#39;train_predict&#39; function for each classifier and each training set size</span>
-<span class="c1">#train_predict(clf_B, X_train_100, y_train_100, X_test, y_test)</span>
+<span class="n">classifier</span> <span class="o">=</span> <span class="p">[</span><span class="n">clf_A</span><span class="p">,</span> <span class="n">clf_B</span><span class="p">,</span> <span class="n">clf_C</span><span class="p">]</span>
+<span class="n">set_size</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="n">classifier</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="n">set_size</span><span class="p">:</span>
+        <span class="n">train_predict</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;X_train_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">size</span><span class="p">)),</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;y_train_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">size</span><span class="p">)),</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Training a GaussianNB using a training set size of 100. . .
+Trained model in 0.0010 seconds
+Made predictions in 0.0010 seconds.
+F1 score for training set: 0.8550.
+Made predictions in 0.0010 seconds.
+F1 score for test set: 0.7481.
+Training a GaussianNB using a training set size of 200. . .
+Trained model in 0.0030 seconds
+Made predictions in 0.0010 seconds.
+F1 score for training set: 0.8321.
+Made predictions in 0.0010 seconds.
+F1 score for test set: 0.7132.
+Training a GaussianNB using a training set size of 300. . .
+Trained model in 0.0020 seconds
+Made predictions in 0.0010 seconds.
+F1 score for training set: 0.8088.
+Made predictions in 0.0010 seconds.
+F1 score for test set: 0.7500.
+Training a RandomForestClassifier using a training set size of 100. . .
+Trained model in 0.0470 seconds
+Made predictions in 0.0020 seconds.
+F1 score for training set: 0.9841.
+Made predictions in 0.0020 seconds.
+F1 score for test set: 0.7119.
+Training a RandomForestClassifier using a training set size of 200. . .
+Trained model in 0.0380 seconds
+Made predictions in 0.0020 seconds.
+F1 score for training set: 1.0000.
+Made predictions in 0.0010 seconds.
+F1 score for test set: 0.7761.
+Training a RandomForestClassifier using a training set size of 300. . .
+Trained model in 0.0450 seconds
+Made predictions in 0.0020 seconds.
+F1 score for training set: 0.9976.
+Made predictions in 0.0020 seconds.
+F1 score for test set: 0.7344.
+Training a SVC using a training set size of 100. . .
+Trained model in 0.0030 seconds
+Made predictions in 0.0010 seconds.
+F1 score for training set: 0.8591.
+Made predictions in 0.0020 seconds.
+F1 score for test set: 0.7838.
+Training a SVC using a training set size of 200. . .
+Trained model in 0.0060 seconds
+Made predictions in 0.0030 seconds.
+F1 score for training set: 0.8693.
+Made predictions in 0.0020 seconds.
+F1 score for test set: 0.7755.
+Training a SVC using a training set size of 300. . .
+Trained model in 0.0110 seconds
+Made predictions in 0.0070 seconds.
+F1 score for training set: 0.8692.
+Made predictions in 0.0030 seconds.
+F1 score for test set: 0.7586.
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
