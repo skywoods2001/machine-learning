@@ -23,7 +23,7 @@ class LearningAgent(Agent):
         ## TO DO ##
         ###########
         # Set any additional class parameters as needed
-        self.a = 0.0076
+        self.a = 0.0115
 
 
     def reset(self, destination=None, testing=False):
@@ -65,7 +65,7 @@ class LearningAgent(Agent):
         #   If it is not, create a dictionary in the Q-table for the current 'state'
         #   For each action, set the Q-value for the state-action pair to 0
         
-        state = (waypoint, inputs['light'], inputs['left'], inputs['right'], inputs['oncoming'])
+        state = (waypoint, inputs['light'], inputs['left'], inputs['oncoming'])
 
         return state
 
@@ -120,12 +120,13 @@ class LearningAgent(Agent):
 
 
         # When learning, choose a random action with 'epsilon' probability
-        if random.random() < self.epsilon:
-            action = random.choice(self.env.valid_actions)
+        else:
+            if random.random() < self.epsilon:
+                action = random.choice(self.env.valid_actions)
 
         # Otherwise, choose an action with the highest Q-value for the current state
-        else:
-            action = max(self.Q[state], key=self.Q[state].get)
+            else:
+                action = max(self.Q[state], key=self.Q[state].get)
         
  
         return action
